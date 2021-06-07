@@ -16,3 +16,11 @@ for(let i = 1; i <= numberOfSquares**2; i++) {
     element.classList.add("item");
     gridContainer.appendChild(element);
 }
+
+let tiles = document.querySelectorAll('.item');
+
+tiles.forEach((tile) => {
+    tile.addEventListener('mouseover', () => {
+        tile.style['background-color'] = 'black';
+    });
+});
