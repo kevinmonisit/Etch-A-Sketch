@@ -1,0 +1,23 @@
+{
+  "name": "etch-a-sketch",
+  "version": "1.0.0",
+  "description": "An Etch-A-Sketch-like sketchpad made using Javascript.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmonisit/Etch-A-Sketch.git"
+  },
+  "author": "Kevin Monisit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinmonisit/Etch-A-Sketch/issues"
+  },
+  "homepage": "https://github.com/kevinmonisit/Etch-A-Sketch#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
