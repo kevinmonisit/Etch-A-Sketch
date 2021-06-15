@@ -7,21 +7,28 @@ html, body {
     flex-direction: column;
 }
 
-#button-container {
+#button-row-container {
     margin-top: auto;
     width:500px;
     height:100px;
     background-color: red;
     min-height:100px;
 
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
 }
 
-#button-container > button {
+.button-container {
+    background-color: blue;
+    height:100%;
+    border: 1px solid gray;
 
+    min-width:1fr;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .active {
