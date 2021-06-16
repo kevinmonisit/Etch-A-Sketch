@@ -36,24 +36,32 @@ colorButtons.forEach((button) => {
 
 const length = 500; // in pixels
 
-const numberOfSquares = 9;
+let numberOfSquares = 9;
 
 const gridContainer = document.querySelector('#grid-container');
 
 gridContainer.style['width'] = `${length}px`;
 gridContainer.style['height'] = `${length}px`;
 
-gridContainer.style['grid-template-columns'] =
-                    `repeat(${numberOfSquares}, 1fr)`;
-gridContainer.style['grid-template-columns'] =
-                    `repeat(${numberOfSquares}, 1fr)`;
+/**
+ * Creates the tiles/squares for the drawing grid
+ * according to the the number of squares specified.
+ */
+function createGridSquares() {
+    gridContainer.style['grid-template-columns'] =
+                        `repeat(${numberOfSquares}, 1fr)`;
+    gridContainer.style['grid-template-columns'] =
+                        `repeat(${numberOfSquares}, 1fr)`;
 
-for (let i = 1; i <= numberOfSquares**2; i++) {
-    const element = document.createElement('div');
-    element.style['border'] = '1px solid grey';
-    element.classList.add('item');
-    gridContainer.appendChild(element);
+    for (let i = 1; i <= numberOfSquares**2; i++) {
+        const element = document.createElement('div');
+        element.style['border'] = '1px solid grey';
+        element.classList.add('item');
+        gridContainer.appendChild(element);
+    }
 }
+
+createGridSquares();
 
 const tiles = document.querySelectorAll('.item');
 
@@ -101,5 +109,32 @@ function clearAllTiles() {
 
 clearButton.addEventListener('click', clearAllTiles);
 
-// ====================== Number of Grids =========================
+// ====================== Number of Grids Change =========================
 
+const gridSizeInput = document.getElementById('grid-size-input');
+const warningText = document.getElementById('grid-size-warning');
+
+/**
+ * Adds warning if grid input is invalid.
+ */
+function modifyWarning(value) {
+    const num = Number(value);
+    if (num === NaN) {
+        warningText.innerText = 'Input must be a number!';
+    } else if (num > 100) {
+        warningText.innerText = 'Cannot be > 100!';
+    } else {
+        warningText.innerText = 'Invalid input';
+    }
+}
+
+gridSizeInput.addEventListener('change', () => {
+    const inputValue = gridSizeInput.value;
+    if (Number(inputValue) !== NaN && inputValue < 100) {
+        numberOfSquares = inputValue;
+        warningText.innerText = '';
+    } else {
+    //    debugger;
+        modifyWarning(inputValue);
+    }
+});
