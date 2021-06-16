@@ -10,14 +10,17 @@
 </head>
 <body>
     <div id='button-row-container'>
-        <div class='button-container'>
-            <button>Clear</button>
+        <div class='input-container'>
+            <button id='clear-button'>Clear</button>
         </div>
-        <div class='button-container'>
+        <div class='input-container' id='second-input-container'>
             <button class='button-color active' id='black-button'>Black</button>
+            <button class='button-color' id='rainbow-color-button'>Rainbow</button>
         </div>
-        <div class='button-container'>
-            <button class='button-color' id='rainbow-color'>Rainbow</button>
+        <div class='input-container' id='third-input-container'>
+            <input type="text" id='grid-size-input'>
+            <button id='grid-size-submit'>Enter</button>
+            <span id='grid-size-warning'>Cannot be > 100!</span>
         </div>
     </div>
     <div id='grid-container'>

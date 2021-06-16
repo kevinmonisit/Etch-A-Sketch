@@ -84,3 +84,22 @@ tiles.forEach((tile) => {
         tile.style['background-color'] = getColor();
     });
 });
+
+// ====================== Clear Button =========================
+
+const clearButton = document.querySelector('#clear-button');
+
+/**
+ * Resets the drawing grid
+ */
+function clearAllTiles() {
+    const tiles = document.querySelectorAll('.item');
+    tiles.forEach((tile) => {
+        tile.style['background-color'] = 'white';
+    });
+}
+
+clearButton.addEventListener('click', clearAllTiles);
+
+// ====================== Number of Grids =========================
+
